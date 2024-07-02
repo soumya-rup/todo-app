@@ -1,0 +1,19 @@
+h1 {
+margin: 10px;
+text-align: center;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+margin-bottom: 25px;
+}
+.item-comtainer{
+  text-align: left;
+}
+input{
+  width: 100%;
+}
+.rup-row{
+  margin-bottom:10px ;
+  margin-top: 10px;
+}
+.my-b{
+  width: 80px;
+}
