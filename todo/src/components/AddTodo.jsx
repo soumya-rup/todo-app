@@ -4,10 +4,10 @@ function AddTodo({ click }) {
   const [todoname, settodoname] = useState("");
   const [tododate, settododate] = useState("");
   const handelname = (event) => {
-    settodoname(event.target.value);
+    event.target.value === null ? null : settodoname(event.target.value);
   };
   const handeldate = (event) => {
-    settododate(event.target.value);
+    event.target.value === null ? null : settododate(event.target.value);
   };
   const handelonclick = () => {
     click(todoname, tododate);
@@ -27,7 +27,7 @@ function AddTodo({ click }) {
           <button
             type="button"
             className="btn btn-success rup-b"
-            onClick={handelonclick}
+            onClick={() => handelonclick(todoname)}
           >
             Add
           </button>

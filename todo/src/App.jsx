@@ -9,9 +9,10 @@ import { useState } from "react";
 function App() {
   const [todoitems, settodoitems] = useState([]);
   const Additem = (name, date) => {
-    console.log(`new item=${name} and new date=${date}`);
-    const newtodoitems = [...todoitems, { name: name, date: date }];
-    settodoitems(newtodoitems);
+    if (name != "") {
+      const newtodoitems = [...todoitems, { name: name, date: date }];
+      settodoitems(newtodoitems);
+    }
   };
   const handeldel = (itemname) => {
     const newTodo = todoitems.filter((item) => item.name !== itemname);
