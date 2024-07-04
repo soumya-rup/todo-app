@@ -1,18 +1,34 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import Appname from "./component/Appname";
-import Addtodo from "./component/Addtodo";
-import Todoitem from "./component/Todoitem";
 import "./App.css";
+import AddTodo from "./components/AddTodo";
+import Heading from "./components/Heading";
+import "bootstrap/dist/css/bootstrap.min.css";
+import TodoItems from "./components/TodoItems";
+import Container from "./components/Container";
+import { useState } from "react";
+
 function App() {
+  const [todoitems, settodoitems] = useState([]);
+  const Additem = (name, date) => {
+    console.log(`new item=${name} and new date=${date}`);
+    const newtodoitems = [...todoitems, { name: name, date: date }];
+    settodoitems(newtodoitems);
+  };
+  const handeldel = (itemname) => {
+    const newTodo = todoitems.filter((item) => item.name !== itemname);
+    settodoitems(newTodo);
+  };
+
   return (
-    <center className="todo-container">
-      <Appname />
-      <Addtodo />
-      <div className="item-comtainer">
-        <Todoitem item="Buy milk" date="4/10/2023" />
-        <Todoitem item="Go college" date="4/10/2023" />
+    <Container>
+      <Heading />
+      {todoitems.length === 0 && (
+        <p className="welcome">Welcome Have a nice day!</p>
+      )}
+      <div className="todocontainer">
+        <AddTodo click={Additem} />
+        <TodoItems todoitems={todoitems} del={handeldel} />
       </div>
-    </center>
+    </Container>
   );
 }
 

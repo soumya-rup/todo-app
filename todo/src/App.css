@@ -1,19 +1,29 @@
-h1 {
-margin: 10px;
-text-align: center;
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-margin-bottom: 25px;
-}
-.item-comtainer{
+.todocontainer{
   text-align: left;
+}
+h1{
+  text-align: center;
+}
+.rup-b{
+  width: 80px;
+  
+}
+.rup-r{
+  margin: 10px 5px;
+  
 }
 input{
   width: 100%;
 }
-.rup-row{
-  margin-bottom:10px ;
-  margin-top: 10px;
+.Container{
+border: 1px solid;
+width: 50%;
+min-width: 600px;
+margin: 40px;
+background-color: rgb(171, 184, 184);
+border-radius:5px ;
 }
-.my-b{
-  width: 80px;
+.welcome{
+  text-align: center;
+  
 }
